@@ -58,33 +58,12 @@
   }
 }
 
-#preloader {
-  position: fixed;
-  inset: 0;
-  height: 100vh;
-  background-color: v.$dark;
-  z-index: 999;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  transition: transform 2s ease;
-  p {
-    color: #bbb;
-    font-family: Courier, "Open Sans", sans-serif;
-    font-size: 16px;
-    margin: v.$spacing-xsmall 0 0 v.$spacing-xsmall;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    animation: preloader-type 2s steps(26), blink 0.5s step-end 10 alternate;
-  }
-}
-
 /*-- -------------------------- -->
 <---          Header            -->
 <--- -------------------------- -*/
 
 #header {
+  display: none;
   position: sticky;
   top: 0;
   left: 0;
@@ -95,7 +74,6 @@
   border: 1px solid v.$dark;
   background-color: v.$light;
   width: 100%;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: v.$spacing-medium v.$spacing-semi-medium;
@@ -321,242 +299,15 @@
 
 // Mobile
 #hero {
-  background-color: v.$acc-yellow;
-
-  .container {
-    .flex-group-row {
-      flex-direction: column;
-      .title {
-        font-size: v.$fs-xxl;
-        span {
-          text-decoration: underline;
-          // border-bottom: 5px solid v.$dark;
-          border-right: 3px solid;
-          animation: blink 0.5s step-end infinite alternate;
-        }
-        @include v.container-query(medium) {
-          font-size: v.$fs-xxxl;
-        }
-      }
-
-      .terminal {
-        flex: 0.8;
-        width: 100%;
-        max-width: 100cqw;
-        background-color: v.$dark;
-        border-radius: v.$border-radius-medium;
-        @include v.drop-shadow;
-        @include v.border-style(v.$dark);
-        @include v.container-query(medium) {
-          max-width: 40%;
-        }
-        .topbar {
-          width: 100%;
-          background-color: #616161;
-          border-radius: v.$border-radius-medium v.$border-radius-medium 0 0;
-          padding: v.$spacing-small;
-          padding-bottom: 0;
-          .task {
-            display: flex;
-            gap: v.$spacing-small;
-            align-items: center;
-            width: 55%;
-            color: v.$light;
-            background-color: v.$dark;
-            border-radius: v.$border-radius-medium v.$border-radius-medium 0 0;
-            padding: v.$spacing-xsmall 0 0 v.$spacing-xsmall;
-            @include v.border-style(v.$dark);
-            @include v.container-query(medium) {
-              width: 45%;
-            }
-            p {
-              font-size: 1rem;
-            }
-          }
-        }
-        .content {
-          padding: 0 v.$spacing-semi-small;
-          margin: v.$spacing-medium 0;
-          border-radius: v.$border-radius-medium;
-          overflow: hidden scroll;
-          height: 400px;
-          scroll-behavior: smooth;
-          p {
-            width: 0;
-            height: 0;
-            color: #bbb;
-            font-family: Courier, "Open Sans", sans-serif;
-            font-size: 14px;
-            margin: v.$spacing-xsmall 0 0 v.$spacing-xsmall;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: mobile-type 2s steps(30) forwards;
-            @include v.container-query(medium) {
-              font-size: 16px;
-              animation: type 2s steps(30) forwards;
-            }
-            .object {
-              color: v.$light;
-            }
-
-            .keyword {
-              color: #98d7e6;
-            }
-
-            .string {
-              color: #f7da6b;
-            }
-
-            .method {
-              color: #b6d883;
-            }
-
-            .variable {
-              color: #a99ecd;
-            }
-
-            .parenthese {
-              color: #e55e51;
-            }
-          }
-          @for $i from 1 through 12 {
-            p:nth-child(#{$i}) {
-              animation-delay: #{$i * 1}s;
-            }
-          }
-          p:nth-child(12) span {
-            border-right: 3px solid;
-            animation: blink 0.5s step-end infinite alternate;
-          }
-        }
-      }
-      .flex-group-row {
-        flex-direction: row;
-      }
-      picture {
-        flex: 0.8;
-        display: none;
-      }
-
-      @include v.container-query(medium) {
-        flex-direction: row;
-      }
-    }
-  }
+  width: 100vw;
+  height: 100vh;
+  background-color: v.$dark;
+  color: v.$light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*-- -------------------------- -->
 <---         What we do         -->
 <--- -------------------------- -*/
-
-#what-we-do {
-  background-color: v.$acc-lightblue;
-
-  .flex-group-row {
-    flex-direction: column;
-    & > p {
-      flex: 1;
-    }
-    @include v.container-query(medium) {
-      flex-direction: row;
-    }
-  }
-
-  .tab-container {
-    display: flex;
-    flex-direction: column;
-    gap: v.$spacing-medium;
-    width: 100%;
-    flex: 2;
-    @include v.container-query(medium) {
-      display: block;
-    }
-
-    .tabs {
-      display: none;
-      list-style: none;
-      padding: 0;
-      border-radius: 5px 5px 0 0;
-      margin: 0;
-
-      @include v.container-query(medium) {
-        display: flex;
-      }
-
-      .tab-link {
-        padding: v.$spacing-xsmall v.$spacing-small;
-        border-radius: 1rem 1rem 0 0;
-        cursor: pointer;
-        color: v.$light;
-        background-color: lighten(v.$brand-secondary, 20%);
-        @include v.border-style(v.$dark);
-        border-bottom: none;
-        transition: v.$transition-default;
-        &:hover {
-          background-color: lighten(v.$brand-secondary, 10%);
-        }
-        &:focus-visible {
-          @include v.focus-style(v.$dark);
-        }
-        &.active {
-          background-color: v.$brand-secondary;
-        }
-        @include v.container-query(small) {
-          padding: v.$spacing-small v.$spacing-medium;
-        }
-      }
-    }
-
-    .tab-content {
-      display: block;
-      padding: v.$spacing-semi-large;
-      border-radius: v.$spacing-medium;
-      @include v.border-style(v.$dark);
-      transition: v.$transition-default;
-      background-color: #fff;
-      @include v.drop-shadow;
-      @include v.container-query(medium) {
-        display: none;
-        border-radius: 0 v.$spacing-medium v.$spacing-medium;
-      }
-
-      .flex-group-row {
-        justify-content: flex-start;
-        gap: v.$spacing-medium;
-        margin-bottom: v.$spacing-medium;
-        flex-direction: column;
-        @include v.container-query(medium) {
-          flex-direction: row;
-          text-align: center;
-          justify-content: center;
-        }
-        @include v.container-query(large) {
-          flex-direction: row;
-          text-align: left;
-          justify-content: flex-start;
-        }
-
-        .img-wrap {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #000;
-          border-radius: 50%;
-          width: 64px;
-          height: 64px;
-          flex-shrink: 0;
-        }
-
-        @include v.container-query(x-small) {
-          .img-wrap {
-            width: 80px;
-            height: 80px;
-          }
-        }
-      }
-      &.active {
-        display: block;
-      }
-    }
-  }
-}

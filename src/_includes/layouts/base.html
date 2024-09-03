@@ -59,40 +59,6 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
 
     <!-- Scripts -->
-
-    <script
-      src="https://js.sentry-cdn.com/0b0fd6f6402b056e6554685c6974b837.min.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-
-    <script src="/assets/js/common.js" defer></script>
-
-    <!--For home page, use service keywords for the title, including location for SEO.
-        Other pages should just include the page name.
-        
-        EXAMPLE:
-        Home page - House Painting Contractors | Painters and Co. | TestCity, WA
-        About Page - About us | Painters and Co.
-        -->
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-HHR2PQB4C0"
-      defer
-    ></script>
-    <script defer>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-HHR2PQB4C0", {
-        cookie_flags: "max-age=7200;SameSite=None;Secure;",
-      });
-    </script>
     {% block head %}{% endblock %}
 
     <title>

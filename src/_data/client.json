@@ -1,18 +1,18 @@
 {
-  "name": "Pixelboost",
-  "email": "hello@pixelboost.ca",
-  "personalEmail": "josh@pixelboost.ca",
-  "phoneForTel": "905-781-2464",
-  "phoneFormatted": "(905) 781-2464",
+  "name": "Long Horn Power",
+  "email": "hello@longhornpower.ca",
+  "personalEmail": "cooper@pixelboost.ca",
+  "phoneForTel": "905-758-9876",
+  "phoneFormatted": "(905) 758-9876",
   "address": {
-    "lineOne": "First Address Line",
-    "lineTwo": "Second Address Line",
-    "city": "Whitby",
+    "lineOne": "47 Ballymore Drive",
+    "lineTwo": "",
+    "city": "Aurora",
     "province": "ON",
-    "postalCode": "L1N",
+    "postalCode": "L4G 7E6",
     "mapLink": ""
   },
-  "domain": "pixelboost.ca",
-  "tag": "Expert Web Design & Development",
-  "description": "Discover Pixel Boost, a Whitby-based web development and design agency specializing in creating high-performance websites for small businesses. Elevate your online presence with our affordable, effective solutions tailored to your unique needs."
+  "domain": "longhornpower.ca",
+  "tag": "Expert Electrician",
+  "description": "Long Horn Power is your top electrician in Aurora and Simcoe, specializing in residential and commercial electrical services. From wiring to lighting installations, repairs, and upgrades, our licensed electricians deliver reliable and affordable solutions to enhance your property's safety and efficiency. Trust Long Horn Power for all your electrical needs."
 }
